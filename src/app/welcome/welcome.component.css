@@ -1,0 +1,11 @@
+.buttons, .btn {
+  margin: 15px;
+}
+
+button {
+  border-radius: 0;
+  box-shadow: 0 5px 5px rgba(0,0,0,.2);
+  letter-spacing: 0.5px;
+  border: 0;
+  outline: 0;
+}

@@ -1,0 +1,22 @@
+<div *ngIf="person | async as p; else loading">
+	<app-header title="Person Detail"></app-header>
+	<div class="person-detail">
+		<h2>
+      Name:	{{ p.name | uppercase }}
+		</h2>
+		<mat-list class="person-detail-list">
+			<mat-list-item class="list-item"> Eye Color: {{ p.eye_color }} </mat-list-item>
+			<mat-list-item class="list-item"> Hari Color: {{ p.hair_color }} </mat-list-item>
+			<mat-list-item class="list-item"> Skin Color: {{ p.skin_color }} </mat-list-item>
+			<mat-list-item class="list-item"> Height: {{ p.height }} </mat-list-item>
+			<mat-list-item class="list-item"> Mass: {{ p.mass }} </mat-list-item>
+			<mat-list-item class="list-item"> Birth Year: {{ p.birth_year }} </mat-list-item>
+		</mat-list>
+	</div>
+</div>
+
+<ng-container>
+	<ng-template #loading>
+		Loading...
+	</ng-template>
+</ng-container>

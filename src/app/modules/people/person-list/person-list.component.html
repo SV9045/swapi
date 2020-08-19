@@ -1,0 +1,18 @@
+<app-header title="People"></app-header>
+<mat-list *ngIf="people | async; else loading" role="people-list">
+  <mat-list-item *ngFor="let person of people | async; let i=index, let isLast=last"
+                 class="list-item" 
+                 role="list-item">
+    <img matListAvatar src="" alt="..." class="person-avatar">
+		<a [routerLink]="['/people', i+1]">
+      {{ person.name }}
+    </a>
+		<mat-divider [inset]="true" *ngIf="!isLast"></mat-divider>
+	</mat-list-item>
+</mat-list>
+
+<ng-container>
+  <ng-template #loading>
+    Loading...
+  </ng-template>
+</ng-container>

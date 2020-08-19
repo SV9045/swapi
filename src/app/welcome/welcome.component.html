@@ -1,0 +1,23 @@
+<app-header title="Star Wars Explorer"></app-header>
+<div class="buttons">
+<div class="btn">
+<button mat-flat-button
+        [disableRipple]="true"
+        (click)="goToPeople()"
+        color="primary">PEOPLE</button>
+</div>
+
+<div class="btn">
+<button mat-flat-button
+        [disableRipple]="true"
+        color="primary">MOVIES</button>
+</div>
+
+<div class="btn">
+<button mat-flat-button
+        [disableRipple]="true"
+        color="primary">PLANETS</button>
+</div>
+</div>
+
+<router-outlet></router-outlet>
