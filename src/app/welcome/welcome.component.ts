@@ -21,4 +21,7 @@ export class WelcomeComponent implements OnInit {
     this.router.navigate(['/planets']);
   }
 
+  goToMovies() {
+    this.router.navigate(['/movies']);
+  }
 }

@@ -1,11 +1,11 @@
-<app-header title="Planets"></app-header>
-<mat-list *ngIf="planets | async; else loading" role="planet-list">
-  <mat-list-item *ngFor="let planet of planets | async; let i=index, let isLast=last"
+<app-header title="Movies"></app-header>
+<mat-list *ngIf="movies | async; else loading" role="movie-list">
+  <mat-list-item *ngFor="let movie of movies | async; let i=index, let isLast=last"
                  class="list-item"
                  role="list-item">
-    <img matListAvatar src="" alt="..." class="planet-avatar">
+    <img matListAvatar src="" alt="..." class="movie-avatar">
 		<a [routerLink]="[i+1]">
-      {{ planet.name }}
+      {{ movie.title }}
     </a>
 		<mat-divider [inset]="true" *ngIf="!isLast"></mat-divider>
 	</mat-list-item>

@@ -8,7 +8,9 @@ const routes: Routes = [
   { path: 'people',
     loadChildren: () => import('src/app/modules/people/people.module').then((m) => m.PeopleModule) },
   { path: 'planets',
-    loadChildren: () => import('src/app/modules/planets/planet.module').then((m) => m.PlanetModule) }
+    loadChildren: () => import('src/app/modules/planets/planet.module').then((m) => m.PlanetModule) },
+  { path: 'movies',
+    loadChildren: () => import('src/app/modules/movies/movie.module').then((m) => m.MovieModule) }
 ];
 
 @NgModule({

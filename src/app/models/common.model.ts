@@ -1,3 +1,5 @@
+import { Url } from 'url'
+
 export interface Person {
 	birth_year: string;
 	eye_color: string;
@@ -32,4 +34,20 @@ export interface Planet {
 	surface_water: any;
 	terrain: string;
 	url: string;
+}
+
+export interface Movie {
+  characters: string[];
+  created: string;
+  edited: string;
+  episode_id: number;
+  opening_crawl: string;
+  producer: string;
+  planets?: string[];
+  release_date: Date;
+  title: string;
+  url: Url;
+  vehicles?: string[];
+  starships: string[];
+  specis: string[]
 }

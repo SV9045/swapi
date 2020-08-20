@@ -1,0 +1,19 @@
+<div *ngIf="movie | async as m; else loading">
+	<app-header title="Movie Detail"></app-header>
+	<div class="movie-detail">
+		<h2>
+      Name:	{{ m.title | uppercase }}
+		</h2>
+		<mat-list class="movie-detail-list">
+			<mat-list-item class="list-item-detail"> Release Date: {{ m.release_date | date }} </mat-list-item>
+			<mat-list-item class="list-item-detail"> Episode ID: {{ m.episode_id}} </mat-list-item>
+			<mat-list-item class="list-item-detail"> Producer: {{ m.producer}} </mat-list-item>
+		</mat-list>
+	</div>
+</div>
+
+<ng-container>
+	<ng-template #loading>
+		Loading...
+	</ng-template>
+</ng-container>

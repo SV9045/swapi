@@ -24,6 +24,6 @@ export class PlanetDetailComponent implements OnInit {
 	}
 
 	getPlanet(id: number): Observable<Planet> {
-		return this.data.getPalent(id);
+		return this.data.getPlaent(id);
 	}
 }
