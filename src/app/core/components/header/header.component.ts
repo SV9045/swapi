@@ -13,6 +13,6 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   navigateToHome() {
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['/']);
   }
 }

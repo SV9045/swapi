@@ -17,4 +17,8 @@ export class WelcomeComponent implements OnInit {
     this.router.navigate(['/people']);
   }
 
+  goToPlanets() {
+    this.router.navigate(['/planets']);
+  }
+
 }

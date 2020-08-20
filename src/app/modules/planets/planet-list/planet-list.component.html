@@ -1,11 +1,11 @@
-<app-header title="People"></app-header>
-<mat-list *ngIf="people | async; else loading" role="people-list">
-  <mat-list-item *ngFor="let person of people | async; let i=index, let isLast=last"
+<app-header title="Planets"></app-header>
+<mat-list *ngIf="planets | async; else loading" role="people-list">
+  <mat-list-item *ngFor="let planet of planets | async; let i=index, let isLast=last"
                  class="list-item"
                  role="list-item">
-    <img matListAvatar src="" alt="..." class="person-avatar">
+    <img matListAvatar src="" alt="..." class="planet-avatar">
 		<a [routerLink]="[i+1]">
-      {{ person.name }}
+      {{ planet.name }}
     </a>
 		<mat-divider [inset]="true" *ngIf="!isLast"></mat-divider>
 	</mat-list-item>
