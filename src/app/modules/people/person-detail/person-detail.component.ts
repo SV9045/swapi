@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from 'src/app/models/common.model';
-import { DataService } from 'src/app/service/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Person } from 'src/app/models/common.model';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
 	selector: 'app-person-detail',
@@ -15,12 +15,10 @@ export class PersonDetailComponent implements OnInit {
               private route: ActivatedRoute) {}
 
 	ngOnInit(): void {
-		const id = this.route.snapshot.url[0].path;
-		if (id) {
-			const personId = +id;
-			// console.log(personId);
-			this.person = this.getPerson(personId);
-		}
+    this.route.paramMap.subscribe((params) => {
+      const id = +params.get('id');
+      this.person = this.getPerson(id);
+    });
 	}
 
 	getPerson(id: number): Observable<Person> {

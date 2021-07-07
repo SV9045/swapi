@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/common.model';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from 'src/app/service/data.service';
 import { Observable } from 'rxjs';
+import { Movie } from 'src/app/models/common.model';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -15,12 +15,10 @@ export class MovieDetailComponent implements OnInit {
               private data: DataService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.url[0].path;
-    console.log(id)
-		if (id) {
-      const movieId = +id;
-      this.movie = this.getMovie(movieId);
-		}
+    this.route.paramMap.subscribe((params) => {
+      const id = +params.get('id');
+      this.movie = this.getMovie(id);
+    });
 	}
 
 	getMovie(id: number): Observable<Movie> {

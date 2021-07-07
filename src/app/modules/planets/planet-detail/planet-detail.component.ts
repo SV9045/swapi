@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Planet } from 'src/app/models/common.model';
-import { DataService } from 'src/app/service/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Planet } from 'src/app/models/common.model';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
 	selector: 'app-planet-detail',
@@ -15,12 +15,10 @@ export class PlanetDetailComponent implements OnInit {
               private route: ActivatedRoute) {}
 
 	ngOnInit(): void {
-    const id = this.route.snapshot.url[0].path;
-    // console.log(id)
-		if (id) {
-      const planetId = +id;
-      this.planet = this.getPlanet(planetId);
-		}
+    this.route.paramMap.subscribe((params) => {
+      const id = +params.get('id');
+      this.planet = this.getPlanet(id);
+    });
 	}
 
 	getPlanet(id: number): Observable<Planet> {

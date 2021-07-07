@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Person } from 'src/app/models/common.model';
 import { DataService } from 'src/app/service/data.service';
-import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-person-list',
@@ -14,7 +14,6 @@ export class PersonListComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.people = this.getPeople();
-		// console.log(this.people.forEach((el) => console.log(el[0].url)))
 	}
 
 	private getPeople(): Observable<Person[]> {
